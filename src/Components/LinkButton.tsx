@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 
 // const LikeButton:React.FC = () => {
 //     const [like,setLike] = useState(0)
@@ -29,6 +29,10 @@ import React,{useState} from "react"
 const LikeButton:React.FC = () => {
     const [like,setLike] = useState(0);
     const [status,toggleStatus] = useState(false)
+    useEffect(() => {
+        console.info("触发")
+        document.title = `点击${like}次`
+    },[like,status])
     return (
         <>  
             <button onClick={status ? () => setLike(like+1) : () =>{}}>
