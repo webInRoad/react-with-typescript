@@ -1,5 +1,6 @@
 import React from 'react';
 import Hello from './Components/Hello'
+import LinkButton from './Components/LinkButton'
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,7 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Hello/>
+        <LinkButton/>
         <a
           className="App-link"
           href="https://reactjs.org"
