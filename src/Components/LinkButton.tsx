@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-
+import useMousePosition from '../hooks/useMounsePosition'
 // const LikeButton:React.FC = () => {
 //     const [like,setLike] = useState(0)
 //     return (
@@ -33,11 +33,13 @@ const LikeButton:React.FC = () => {
         console.info("触发")
         document.title = `点击${like}次`
     },[like,status])
+    const position = useMousePosition()
     return (
         <>  
             <button onClick={status ? () => setLike(like+1) : () =>{}}>
                 {like}赞
             </button>
+            <div>位于X:{position.x},y:{position.y}</div>
             <button onClick={() => toggleStatus(!status)}>
                 {status ? "ON":"OFF"}
             </button>
