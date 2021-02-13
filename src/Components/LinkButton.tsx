@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
+import { ThemeContxt } from '../App'
 import useMousePosition from '../hooks/useMounsePosition'
 // const LikeButton:React.FC = () => {
 //     const [like,setLike] = useState(0)
@@ -57,9 +58,15 @@ const LikeButton: React.FC = () => {
 			didMountRef.current = true
 		}
 	})
+	const theme = useContext(ThemeContxt)
+	const style = {
+		color: theme.color,
+		background: theme.background
+	}
 	return (
 		<>
 			<button
+				style={style}
 				onClick={
 					status
 						? () => {
