@@ -37,14 +37,15 @@ function App() {
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<button onClick={() => setShow(!show)}>Toggle MouseTracker</button>
-				<div>
+				{/* <div>
 					位于X:{position.x},y:{position.y}
-				</div>
+				</div> */}
 				{/* {show && <Mouse/>} */}
-				{/* {<LinkButton />} */}
+				{<LinkButton />}
 				{/* <WrappedDogShow /> */}
-				{/* {loading ? <p>读取中</p> : <img src={dogResult.message} />} */}
-				{loading ? <p>读取中</p> : <img src={dogResult && dogResult.message} />}
+				{/* {loading ? <p>读取中</p> : <img src={dogResult.message} />}  */}
+				{/* 上面一行没加dogResult判空处理，是有问题的 */}
+				{/* {loading ? <p>读取中</p> : <img src={dogResult && dogResult.message} />} */}
 				<a
 					className="App-link"
 					href="https://reactjs.org"
